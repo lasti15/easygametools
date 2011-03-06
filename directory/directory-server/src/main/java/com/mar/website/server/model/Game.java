@@ -2,9 +2,7 @@ package com.mar.website.server.model;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

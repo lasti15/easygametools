@@ -1,11 +1,9 @@
 package com.mar.website.server.services.impl;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import junit.framework.Assert;
@@ -18,12 +16,6 @@ import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.security.providers.encoding.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 
-import a_vcard.android.provider.Contacts;
-import a_vcard.android.syncml.pim.vcard.ContactStruct;
-import a_vcard.android.syncml.pim.vcard.VCardComposer;
-import a_vcard.android.syncml.pim.vcard.VCardException;
-
-import com.mar.website.server.email.EmailAttachment;
 import com.mar.website.server.email.EmailHelper;
 import com.mar.website.server.managers.UserManager;
 import com.mar.website.server.model.User;
@@ -34,7 +26,6 @@ import com.mar.website.server.model.merge.Merge;
 import com.mar.website.server.model.merge.ValidationManager;
 import com.mar.website.server.model.merge.impl.Validators;
 import com.mar.website.server.services.AbstractMarService;
-import com.mar.website.server.services.LoginService;
 import com.mar.website.server.services.UserService;
 import com.mar.website.server.util.SessionWrapper;
 
