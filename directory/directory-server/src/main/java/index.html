@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test</title>
+</head>
+<body>
+  <form id="loginForm" action="http://localhost:8080/directory/login/login" method="post">
+  	<input type="text" id="username" name="username" />
+  	<input type="password" id="password" name="password" />
+  	<input type="submit" value="Login" />
+  </form>
+
+  
+  <form id="register" action="https://localhost/directory/user/register" method="post">
+  	<input type="text" id="u" name="u" />
+  	<input type="text" id="xml" name="xml" />
+  	<input type="submit" value="register" />
+  </form>
+  
+  <form id="unregister" action="https://localhost/directory/user/unregister" method="post">
+  	<input type="submit" value="unregister" />
+  </form>
+
+  
+  <form id="save" action="https://localhost/directory/user/save" method="post">
+  	<input type="text" id="u" name="u" />
+  	<input type="text" id="xml" name="xml" />
+  	<input type="submit" value="saveUser" />
+  </form>
+  
+
+
+  
+  
+  <form id="isloggedin" action="https://localhost/directory/login/isLoggedIn" method="get">
+  	<input type="submit" value="isLoggedIn" />
+  </form>
+  
+  <form id="logout" action="https://localhost/directory/logout" method="get">
+  	<input type="submit" value="logout" />
+  </form>
+  
+  <form id="install" action="https://localhost/directory/install/install" method="get">
+  	<input type="submit" value="install" />
+  </form>
+  
+  <form id="requestReset" action="https://localhost/directory/user/forgotPassword" method="post">
+	<input type="text" id="username" name="username" />
+	<input type="text" id="email" name="email" />
+	<input type="submit" value="forgotPassword" />
+  </form>
+  
+  <form id="performReset" action="https://localhost/directory/user/resetPassword" method="post">
+	<input type="text" id="activationCode" name="activationCode" />
+	<input type="password" id="newPassword" name="newPassword" />
+	<input type="password" id="newPasswordConfirm" name="newPasswordConfirm" />
+	<input type="submit" value="reset" />
+  </form>
+  
+  <form id="requestUsername" action="https://localhost/directory/user/forgotUsername" method="post">
+	<input type="text" id="email" name="email" />
+	<input type="submit" value="forgotUsername" />
+  </form>
+  
+  
+  <form id="findGames" action="http://localhost:8080/directory/gamer/findGames" method="post">
+	<input type="text" id="page" name="page" />
+	<input type="submit" value="Find Games" />
+  </form>
+  
+  <form id="createGame" action="http://localhost:8080/directory/gamer/startGame" method="post">
+	<input type="text" id="host" name="host" />
+	<input type="text" id="port" name="port" />
+	<input type="submit" value="Create Game" />
+  </form>
+  
+  
+  <form id="createGame" action="http://localhost:8080/directory/gamer/update" method="post">
+	<input type="text" id="game" name="game" />
+	<input type="submit" value="Update" />
+  </form>
+  
+
+  
+</body>
+</html>

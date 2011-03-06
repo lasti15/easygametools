@@ -1,0 +1,66 @@
+
+Quick tour of the files here:
+-----------------------------
+ocport.h:  
+First file you should look at.  It encapsulates all the system level
+issues for porting across different platforms.
+
+ocstring.h:
+A subset implementation of the STL string, in case you are on a
+platform with no STL at all.  The OCString class can be typedefed to
+"string" (and frequently is in the "tests").
+
+ocstringtools.h:
+Added Image and DeImage functions to allow converting between Imaged strings 
+and raw strings underneath.
+
+occomplex.h:
+An implementation of a complex class
+
+ocpermutations.h:
+Some classes for generating permutations.  All permutations of (for
+example) 123 are 123, 132, 213, 231, 312, 321
+
+ocsort.h:
+Some classes for sorting arrays/containers of data.  It implements
+both an Insertion Sort and a Quick Sort as well as a median find.
+
+ocarray.h:
+An array for objects and pointers.  (Array and ArrayPtr)   
+
+ochashtablet.h:
+ochashtable.h:
+General HashTable classes for fixed size Tables.
+
+ocavlhasht.h:
+ocavlhash.h:			   
+General extendible hashing HashTable classes.
+
+ochashfunction.h:
+String hashfunction needed by HashTables and AVLHashes.
+
+ocavltreet.h:
+ocavltree.h:
+Balanced binary search trees for holding key-value pairs.
+
+occontainer_test.h:
+Most of the containers contain the same interface (AVLHash, AVLTree,
+HashTable), so the test for testing them is a template here.
+
+ocexception.h:
+Exceptions thrown by Arrays and Strings: if you don't
+have STL exceptions, these mimic that structure
+
+ocval.h:
+Recursive, heterogeneous container (like Python dictionaries).
+Newer classes.
+
+ocvalreader.h:
+Allows Vals to read string literals easily
+
+ocserialize.h:
+Moves the serialization from val class to its own file
+
+occircularbuffer.h
+Implements both infinite and finite circular buffers
+

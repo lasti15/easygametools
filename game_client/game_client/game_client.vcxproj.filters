@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\net">
+      <UniqueIdentifier>{c9179698-fb3a-48a8-a8e8-43ddd619d567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\net">
+      <UniqueIdentifier>{e86e39e5-f27b-42b5-8884-3e709baaedef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lobby">
+      <UniqueIdentifier>{e3bcf1bb-89a7-452b-820c-7e507a2e1550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lobby">
+      <UniqueIdentifier>{8ffaf656-546c-48a9-9625-3145e820dbab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{d617e15f-20b0-4a9f-b183-8a17f8b4cdbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{1d554658-c261-47d8-af5d-0c6b1b5697b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mem">
+      <UniqueIdentifier>{f90c2cb3-9c0f-4a01-b144-f2bc8e6b8cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mem">
+      <UniqueIdentifier>{567d69da-8777-4a3a-9684-5dfeecba21b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base64">
+      <UniqueIdentifier>{bf4028f2-64b6-4c0b-9817-5ffa5d86c0a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base64">
+      <UniqueIdentifier>{4113396f-b34a-4be4-a4f0-d75f2d523146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\raknet">
+      <UniqueIdentifier>{cb7720aa-3c4a-41f6-8779-47d7049b0d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\log">
+      <UniqueIdentifier>{96bc103b-b4bc-4f06-8323-e8d107d04fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\log">
+      <UniqueIdentifier>{f58c61c5-98df-4433-97fd-85837a6bdc99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\log\impl">
+      <UniqueIdentifier>{63245386-d0e2-4abd-a8b9-f5680853d7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\config">
+      <UniqueIdentifier>{9c824be3-16c1-4d05-b683-b7918d72d749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api">
+      <UniqueIdentifier>{abe7e7e2-6991-463b-b22b-9e99e8d87ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\api">
+      <UniqueIdentifier>{6d7c1e1f-22ac-4529-a5ce-16a60166991c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\thread">
+      <UniqueIdentifier>{44a611f7-0e7a-46a0-9013-5dd0f41d0436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\thread">
+      <UniqueIdentifier>{f2349d49-b7a5-4376-b82a-5da686771fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\web">
+      <UniqueIdentifier>{b818d43b-921a-4654-af65-2258ab906800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\examples">
+      <UniqueIdentifier>{7bfc9c67-b007-49a0-b8fb-15e3e301e62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\protocol">
+      <UniqueIdentifier>{0f0ed432-7c7a-4dd6-89a8-f3932a98d3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\exception">
+      <UniqueIdentifier>{0f2e154b-bed3-43ce-97e9-747402b6b003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\handler">
+      <UniqueIdentifier>{015478d3-dc96-4f69-aab8-0f023fa4fed4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameClient.cpp">
+      <Filter>Source Files\net</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryClient.cpp">
+      <Filter>Source Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reference.cpp">
+      <Filter>Source Files\mem</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\_FindFirst.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\BitStream.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CCRakNetSlidingWindow.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CCRakNetUDT.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CheckSum.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CommandParserInterface.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ConnectionGraph2.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ConsoleServer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DataCompressor.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DirectoryDeltaTransfer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_BytePool.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_ByteQueue.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_HuffmanEncodingTree.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Table.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\EmailSender.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\EncodeClassName.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\EpochTimeToString.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileList.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileListTransfer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileOperations.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FormatString.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FullyConnectedMesh2.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Getche.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Gets.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\GetTime.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\gettimeofday.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\GridSectorizer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\HTTPConnection.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\IncrementalReadInterface.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Itoa.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\LinuxStrings.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\LogCommandParser.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\MessageFilter.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatPunchthroughClient.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatPunchthroughServer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionClient.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionCommon.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionServer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NetworkIDManager.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NetworkIDObject.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketConsoleLogger.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketFileLogger.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketizedTCP.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketLogger.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketOutputWindowLogger.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PluginInterface2.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakMemoryOverride.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetCommandParser.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetSocket.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetStatistics.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetTransport2.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetTypes.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakPeer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakSleep.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakString.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakThread.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Rand.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\rdlmalloc.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReadyEvent.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReliabilityLayer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReplicaManager3.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Router2.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RPC4Plugin.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SecureHandshake.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SendToThread.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SHA1.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SignaledEvent.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SimpleMutex.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SocketLayer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\StringCompressor.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\StringTable.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SuperFastHash.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TableSerializer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TCPInterface.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TeamBalancer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TelnetTransport.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ThreadsafePacketLogger.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPForwarder.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyClient.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyCoordinator.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyServer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariableDeltaSerializer.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariableListDeltaTracker.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariadicSQLParser.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\WSAStartupSingleton.cpp">
+      <Filter>Header Files\raknet</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="Http.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Header Files\config</Filter>
+    </ClCompile>
+    <ClCompile Include="ROG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractApplication.cpp">
+      <Filter>Source Files\api</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Source Files\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Web.cpp">
+      <Filter>Header Files\web</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>Source Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Header Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerGame.cpp">
+      <Filter>Header Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="IrrCharArrayReaderSource.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameList.cpp">
+      <Filter>Header Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\examples\SimpleApp.cpp">
+      <Filter>Source Files\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>Source Files\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="UserList.cpp">
+      <Filter>Header Files\lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\protoc\cpp\User.pb.cc">
+      <Filter>Header Files\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\examples\DirectoryClientExample.cpp">
+      <Filter>Source Files\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\protoc\cpp\ProtoChallenge.pb.cc">
+      <Filter>Header Files\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\protoc\cpp\Protocol.pb.cc">
+      <Filter>Header Files\protocol</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectoryClient.h">
+      <Filter>Header Files\lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerGame.h">
+      <Filter>Header Files\lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClient.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtil.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Reference.h">
+      <Filter>Header Files\mem</Filter>
+    </ClInclude>
+    <ClInclude Include="Http.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Semaphore.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>Header Files\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\_FindFirst.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\AutopatcherPatchContext.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\AutopatcherRepositoryInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\BitStream.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CCRakNetSlidingWindow.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CCRakNetUDT.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CheckSum.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CommandParserInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ConnectionGraph2.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ConsoleServer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DataCompressor.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DirectoryDeltaTransfer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_BinarySearchTree.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_BPlusTree.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_BytePool.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_ByteQueue.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Heap.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_HuffmanEncodingTree.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_HuffmanEncodingTreeFactory.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_HuffmanEncodingTreeNode.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_LinkedList.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_List.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Map.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_MemoryPool.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Multilist.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_OrderedChannelHeap.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_OrderedList.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Queue.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_QueueLinkedList.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_RangeList.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_StringKeyedHash.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Table.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_ThreadsafeAllocatingQueue.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_Tree.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\DS_WeightedGraph.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\EmailSender.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\EpochTimeToString.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Export.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileList.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileListNodeContext.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileListTransfer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileListTransferCBInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FileOperations.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FormatString.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\FullyConnectedMesh2.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Getche.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Gets.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\GetTime.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\gettimeofday.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\GridSectorizer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\HTTPConnection.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\IncrementalReadInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\InternalPacket.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Itoa.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Kbhit.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\LinuxStrings.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\LogCommandParser.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\MessageFilter.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\MessageIdentifiers.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\MTUSize.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NativeFeatureIncludes.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NativeFeatureIncludesOverrides.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NativeTypes.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatPunchthroughClient.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatPunchthroughServer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionClient.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionCommon.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NatTypeDetectionServer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NetworkIDManager.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\NetworkIDObject.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketConsoleLogger.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketFileLogger.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketizedTCP.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketLogger.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketOutputWindowLogger.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketPool.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PacketPriority.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\PluginInterface2.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakAlloca.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakAssert.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakMemoryOverride.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetCommandParser.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetDefines.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetDefinesOverrides.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetSmartPtr.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetSocket.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetStatistics.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetTime.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetTransport2.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetTypes.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNetVersion.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakPeer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakPeerInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakSleep.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakString.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakThread.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Rand.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\rdlmalloc.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\rdlmalloc-options.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReadyEvent.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RefCountedObj.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReliabilityLayer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Replica.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReplicaEnums.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ReplicaManager3.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\Router2.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RPC4Plugin.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SecureHandshake.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SendToThread.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SHA1.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SignaledEvent.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SimpleMutex.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SimpleTCPServer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SingleProducerConsumer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SocketIncludes.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SocketLayer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\StringCompressor.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\StringTable.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\SuperFastHash.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TableSerializer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TCPInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TeamBalancer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TelnetTransport.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ThreadPool.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\ThreadsafePacketLogger.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\TransportInterface.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPForwarder.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyClient.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyCommon.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyCoordinator.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\UDPProxyServer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariableDeltaSerializer.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariableListDeltaTracker.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\VariadicSQLParser.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\WindowsIncludes.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\WSAStartupSingleton.h">
+      <Filter>Header Files\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClientEventListener.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClientEvent.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="Appender.h">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="RollingFileAppender.h">
+      <Filter>Header Files\log\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientFuture.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="ROG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadEvent.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadEventListener.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Web.h">
+      <Filter>Header Files\web</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Header Files\lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlRootElement.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="IrrCharArrayReaderSource.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameList.h">
+      <Filter>Header Files\lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="FatalException.h">
+      <Filter>Header Files\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginFailedException.h">
+      <Filter>Header Files\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractApplication.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Runnable.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskRejectedException.h">
+      <Filter>Header Files\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="RunQueue.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClientEventTask.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClientEventEmitter.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="UserList.h">
+      <Filter>Header Files\lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="RunQueueListener.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="RunQueueEvent.h">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryUpdateTask.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryAdoptTask.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\protoc\cpp\User.pb.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtocolException.h">
+      <Filter>Header Files\exception</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtocolFactory.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\protoc\cpp\ProtoChallenge.pb.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\protoc\cpp\Protocol.pb.h">
+      <Filter>Header Files\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Header Files\handler</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CMakeLists.txt">
+      <Filter>Header Files\raknet</Filter>
+    </None>
+    <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNet.vcproj">
+      <Filter>Header Files\raknet</Filter>
+    </None>
+    <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNet_vc8.vcproj">
+      <Filter>Header Files\raknet</Filter>
+    </None>
+  </ItemGroup>
+</Project>

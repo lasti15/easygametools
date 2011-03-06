@@ -1,0 +1,18 @@
+
+package ROG.protocol;
+
+
+enum MessageId {
+   CHALLENGE = 1;
+   CHALLENGERESPONSE = 2;
+   CHALLENGEACCEPTED = 3;
+   USER = 4;
+}
+
+
+message ProtocolMessage {
+   required MessageId messageId = 1;
+
+   extensions 100 to max;
+}
+

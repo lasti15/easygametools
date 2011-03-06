@@ -1,0 +1,26 @@
+<!-- logging levels for different components -->
+<logLevel value="WARN" />
+<Main.logLevel value="DEBUG" />
+<!--Thread.logLevel value="DEBUG" /-->
+<Reference.logLevel value="INFO" />
+<!--ConfigLoader.logLevel value="DEBUG" /-->
+<!--AbstractApplication.logLevel value="DEBUG" /-->
+<GameClient.logLevel value="DEBUG" />
+<DirectoryClient.logLevel value="DEBUG" />
+<!--User.logLevel value="DEBUG" /-->
+<!--ServerGame.logLevel value="DEBUG" /-->
+<!--GameList.logLevel value="DEBUG" /-->
+<!--UserList.logLevel value="DEBUG" /-->
+<TestApp.logLevel value="DEBUG" />
+<!--ThreadPool.logLevel value="DEBUG" /-->
+<!--RunQueue.logLevel value="DEBUG" /-->
+<DirectoryUpdateTask.logLevel value="DEBUG" />
+<DirectoryAdoptTask.logLevel value="DEBUG" />
+<ChallengeResponseMessageHandler.logLevel value="DEBUG" />
+<ChallengeAcceptedMessageHandler.logLevel value="DEBUG" />
+
+
+<!-- Directory client variables -->
+<DirectoryClient.hostName value="localhost" />
+<DirectoryClient.hostPort value="8080" />
+<DirectoryClient.context value="/directory" />
