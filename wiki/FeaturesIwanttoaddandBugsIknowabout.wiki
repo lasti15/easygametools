@@ -6,6 +6,7 @@
   * When a user has 2 players in the same game its really difficult to tell which is which on the directory server. This could lead to exploits in stealing host privileges.
   * Configuration is pretty poorly implemented
   * Console logging is duct taped into the Rolling file appender, and the rolling file appender never rolls.
+  * I would suspect theres alot of mutex contention on the logging.
 
 
 = Features I want =
