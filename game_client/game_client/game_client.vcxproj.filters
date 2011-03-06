@@ -976,5 +976,14 @@
     <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNet_vc8.vcproj">
       <Filter>Header Files\raknet</Filter>
     </None>
+    <None Include="..\protoc\ProtoChallenge.proto">
+      <Filter>Header Files\protocol</Filter>
+    </None>
+    <None Include="..\protoc\Protocol.proto">
+      <Filter>Header Files\protocol</Filter>
+    </None>
+    <None Include="..\protoc\User.proto">
+      <Filter>Header Files\protocol</Filter>
+    </None>
   </ItemGroup>
 </Project>

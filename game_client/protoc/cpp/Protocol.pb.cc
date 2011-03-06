@@ -80,9 +80,9 @@ void protobuf_AddDesc_Protocol_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\016Protocol.proto\022\014ROG.protocol\"G\n\017Protoc"
     "olMessage\022*\n\tmessageId\030\001 \002(\0162\027.ROG.proto"
-    "col.MessageId*\010\010d\020\200\200\200\200\002*R\n\tMessageId\022\r\n\t"
+    "col.MessageId*\010\010d\020\200\200\200\200\002*_\n\tMessageId\022\r\n\t"
     "CHALLENGE\020\001\022\025\n\021CHALLENGERESPONSE\020\002\022\025\n\021CH"
-    "ALLENGEACCEPTED\020\003\022\010\n\004USER\020\004", 187);
+    "ALLENGEACCEPTED\020\003\022\013\n\007NEWHOST\020\004\022\010\n\004USER\020\005", 200);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Protocol.proto", &protobuf_RegisterTypes);
   ProtocolMessage::default_instance_ = new ProtocolMessage();
@@ -107,6 +107,7 @@ bool MessageId_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;

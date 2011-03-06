@@ -15,6 +15,11 @@ public class SessionState implements Serializable {
 	private String username = null;
 	
 	private User user;
+	
+	/**
+	 * This is kindof a hack. It tells us which game ID this user owns, since a user can only host one game at a time.
+	 */
+	private Long hostGameId;
 
 	public void setUsername(String username) {
 		this.username = username;
@@ -30,5 +35,13 @@ public class SessionState implements Serializable {
 
 	public User getUser() {
 		return user;
+	}
+
+	public void setHostGameId(Long hostGameId) {
+		this.hostGameId = hostGameId;
+	}
+
+	public Long getHostGameId() {
+		return hostGameId;
 	}
 }

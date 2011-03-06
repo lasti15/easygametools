@@ -39,7 +39,8 @@ enum MessageId {
   CHALLENGE = 1,
   CHALLENGERESPONSE = 2,
   CHALLENGEACCEPTED = 3,
-  USER = 4
+  NEWHOST = 4,
+  USER = 5
 };
 bool MessageId_IsValid(int value);
 const MessageId MessageId_MIN = CHALLENGE;

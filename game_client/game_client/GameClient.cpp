@@ -88,6 +88,7 @@ public:
 		usernameBuf[username.length()] = 0;
 		user->setUsername(usernameBuf);
 
+		//add this player to our list of current players
 		from->lock();
 
 		from->setUser(user);
@@ -155,10 +156,9 @@ public:
 		from->setUser(directoryUser);
 		from->setConnectionState(AUTHENTICATED);
 		currentPlayers->insertKeyAndValue(OCString(from->getClientGuid().ToString()), from);
+		client->addPlayer(from);
 
 		from->unlock();
-
-		client->addPlayer(from);
 
 		logger->debug("User was allowed to join");
 
@@ -400,9 +400,8 @@ void GameClient::run() {
 					case ID_DISCONNECTION_NOTIFICATION:
 						logger->debug("ID_DISCONNECTION_NOTIFICATION");
 
-						//update the number of playres in our game object until it gets updated by the directory client
-						//race condition if lots of clients disconnect at once
-						this->theGameImPlaying->setNumberOfPlayers(this->theGameImPlaying->getNumberOfPlayers()-1);
+						gamePlayers.remove(OCString(packet->guid.ToString()));
+
 						dispatchPool->execute(new GameClientEventTask(new ClientEventEmitter(this->eventListener), EVENT_CONNECTION_LOST, NULL));
 
 						//everytime a client disconnects reduce our lastupdate time to make it sooner that we update the directory record
@@ -412,10 +411,6 @@ void GameClient::run() {
 					//A new client connected to us
 					case ID_NEW_INCOMING_CONNECTION:
 						logger->debug("ID_NEW_INCOMING_CONNECTION");
-
-						//update the number of playres in our game object until it gets updated by the directory client
-						//race condition if lots of clients connect at once
-						this->theGameImPlaying->setNumberOfPlayers(this->theGameImPlaying->getNumberOfPlayers()+1);
 
 						dispatchPool->execute(new GameClientEventTask(new ClientEventEmitter(this->eventListener), EVENT_NEW_CONNECTION, NULL));
 
@@ -449,7 +444,8 @@ void GameClient::run() {
 					case ID_CONNECTION_LOST:
 						logger->debug("ID_CONNECTION_LOST");
 
-						this->theGameImPlaying->setNumberOfPlayers(this->theGameImPlaying->getNumberOfPlayers()-1);
+						gamePlayers.remove(OCString(packet->guid.ToString()));
+
 						dispatchPool->execute(new GameClientEventTask(new ClientEventEmitter(this->eventListener), EVENT_CONNECTION_TERMINATED, NULL));
 
 						//everytime a client disconnects reduce our lastupdate time to make it sooner that we update the directory record
@@ -459,7 +455,7 @@ void GameClient::run() {
 					case ID_FCM2_NEW_HOST:
 						logger->debug("ID_FCM2_NEW_HOST");
 						if (fcm2->IsHostSystem()) {
-							dispatchPool->execute(new DirectoryAdoptTask(this->directoryClient, this->theGameImPlaying, this->theGameImPlaying->getGameId(), this->hostname, this->port, this->rakPeer));
+							dispatchPool->execute(new DirectoryAdoptTask(this->directoryClient, this, this->theGameImPlaying->getGameId(), this->hostname, this->port, this->rakPeer, creator));
 						}
 						dispatchPool->execute(new GameClientEventTask(new ClientEventEmitter(this->eventListener), EVENT_HOST_CHANGED, NULL));
 						break;
@@ -471,6 +467,7 @@ void GameClient::run() {
 						break;*/
 
 					case PROTOCOL_OBJECT_MESSAGE:
+						logger->debug("PROTOCOL_OBJECT_MESSAGE");
 						handleProtocolMessage(packet);
 						break;
 
@@ -525,6 +522,17 @@ void GameClient::run() {
 }
 
 
+void GameClient::updateGame(Object<ServerGame> game) {
+	if (game == NULL) {
+		//if game is NULL it could be because the host didnt exit cleanly, or I am hosting another game already
+		//let it spin one cycle trying to figure itself out
+		throw new ProtocolException("UpdateGame(): game is null");
+	}
+
+	this->theGameImPlaying = game;
+}
+
+
 
 bool GameClient::isHost() {
 	if (this->myPlayer == NULL || this->theGameImPlaying == NULL || this->cg2 == NULL || this->fcm2 == NULL || this->directoryClient == NULL || this->myUser == NULL) {
@@ -536,7 +544,6 @@ bool GameClient::isHost() {
 
 
 void GameClient::handleProtocolMessage(RakNet::Packet* packet) {
-	logger->debug("PROTOCOL_OBJECT_MESSAGE");
 
 	//deserialize and store the message somehow int eh event
 
@@ -545,7 +552,7 @@ void GameClient::handleProtocolMessage(RakNet::Packet* packet) {
 		throw new ProtocolException("Could not decode Message");
 	}
 
-	logger->info("Got new protocol message!");
+	logger->debug("Got new protocol message!");
 
 	protocol::MessageId messageId = message->messageid();
 	//based on the connectionstate, only allow access to certain messages
@@ -763,6 +770,7 @@ Object<ClientFuture> GameClient::startGame(const char* hostName, int desiredPort
 	}
 
 	this->theGameImPlaying = newGame;
+	creator = true;
 
 	//start the networking thread
 	dispatcherThread = new Thread(this);

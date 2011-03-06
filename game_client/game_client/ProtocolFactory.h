@@ -69,7 +69,17 @@ namespace ROG {
 			return message;
 		}
 
+		inline const static protocol::ProtocolMessage* getProtoNewHostMessage(long gameid) {
 
+			protocol::ProtocolMessage* message = new protocol::ProtocolMessage();
+			message->set_messageid(protocol::NEWHOST);
+
+			protocol::ProtoNewHost* response = message->MutableExtension(protocol::ProtoNewHost::newHost);
+			response->set_gamesync(gameid);
+			
+
+			return message;
+		}
 	};
 
 

@@ -58,6 +58,8 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 		
 		newGame = gameManager.createGame(newGame);
 		
+		sessionContext.getSession().setHostGameId(newGame.getId());
+		
 		return newGame;
 	}
 
@@ -70,11 +72,14 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 			//if we foudn the game then we beat the synchronizer to deleting it
 			if (game != null) {
 				//make sure the updater is actually the owner of this game
-				if (game.getHostUser().getId().equals(sessionContext.getSession().getUser().getId())) {
-					game.setLastUpdate(new Date().getTime());
-					game.setHostUser(userManager.find(sessionContext.getSession().getUser().getId()));
-					
-					return gameManager.updateGame(game);
+				//this is dicey when we have one player with 2 or more characters in a game
+				if (sessionContext.getSession().getHostGameId() != null && sessionContext.getSession().getHostGameId().equals(gameToUpdate.getId())) {
+					if (game.getHostUser().getId().equals(sessionContext.getSession().getUser().getId())) {
+						game.setLastUpdate(new Date().getTime());
+						game.setHostUser(userManager.find(sessionContext.getSession().getUser().getId()));
+						
+						return gameManager.updateGame(game);
+					}
 				}
 			}
 		}
@@ -89,8 +94,10 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 			//if we found the game then we beat the synchronizer to deleting it
 			if (game != null) {
 				//make sure the deleter is actually the owner of this game
-				if (game.getHostUser().getId().equals(sessionContext.getSession().getUser().getId())) {
-					gameManager.deleteGame(gameToRemove);
+				if (sessionContext.getSession().getHostGameId() != null && sessionContext.getSession().getHostGameId().equals(gameToRemove)) {
+					if (game.getHostUser().getId().equals(sessionContext.getSession().getUser().getId())) {
+						gameManager.deleteGame(gameToRemove);
+					}
 				}
 			}
 		}
@@ -115,9 +122,20 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 				//then we would get intoa situation where 2 of the clients are actually technically valid game hosts and i just dont
 				//want to deal with that
 				if (game.getHostUser().getId().equals(sessionContext.getSession().getUser().getId())) {
-					game.setLastUpdate(new Date().getTime());
+					/*game.setLastUpdate(new Date().getTime());
 					
-					return gameManager.updateGame(game);
+					//setting this here is a huge security hole
+					//we have no idea if this is actually the new host, or if
+					//it is someone pretending to be the new host who's user was also the previous host
+					sessionContext.getSession().setHostGameId(gameToAdopt);
+					
+					return gameManager.updateGame(game);*/
+					
+					//for now we are going to take a huge dump if the host did not exit cleanly but 
+					//another of his characters wants to become the host
+					//make sure the host exits properly if you want a child of theirs to be able 
+					//to become the new host
+					throw new WebServiceException("Can't validate new host");
 				}
 			}
 			//create the new game
@@ -133,8 +151,11 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 			newGame.getPlayers().add(userManager.find(sessionContext.getSession().getUser().getId()));
 			
 			newGame = gameManager.createGame(newGame);
+			
+			sessionContext.getSession().setHostGameId(newGame.getId());
+			
+			return newGame;
 		}
-		throw new WebServiceException("Cannot adopt game");
 	}
 
 	@Override
@@ -170,12 +191,11 @@ public class GamerServiceImpl extends AbstractMarService implements	GamerService
 		}
 		
 		//amke sure only the host validates users
-		if (!sessionContext.getSession().getUser().getId().equals(game.getHostUser().getId())) {
-			throw new WebServiceException("Invalid game");
+		if (sessionContext.getSession().getHostGameId() != null && sessionContext.getSession().getHostGameId().equals(gameId)) {
+			//this player is validated, add them to the list of players
+			game.getPlayers().add(user);
 		}
 		
-		//this player is validated, add them to the list of players
-		game.getPlayers().add(user);
 		gameManager.updateGame(game);
 
 		return user;
