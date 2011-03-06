@@ -68,7 +68,6 @@ public class GameServiceTest {
 		g.setHostName("localhost");
 		g.setHostPort(11223);
 		g.setMaxPlayers(8);
-		g.setNumberOfPlayers(1);
 		g.setLastUpdate(new Date().getTime());
 		
 		g = gameManager.createGame(g);
@@ -103,7 +102,6 @@ public class GameServiceTest {
 		g.setHostName("localhost");
 		g.setHostPort(11223);
 		g.setMaxPlayers(8);
-		g.setNumberOfPlayers(1);
 		g.setLastUpdate(new Date().getTime());
 		
 		g = gameManager.createGame(g);
@@ -141,7 +139,6 @@ public class GameServiceTest {
 		g.setHostName("localhost");
 		g.setHostPort(11223);
 		g.setMaxPlayers(8);
-		g.setNumberOfPlayers(1);
 		g.setLastUpdate(new Date().getTime());
 		
 		g = gameManager.createGame(g);
@@ -180,7 +177,6 @@ public class GameServiceTest {
 		g.setHostName("localhost");
 		g.setHostPort(11223);
 		g.setMaxPlayers(8);
-		g.setNumberOfPlayers(1);
 		g.setLastUpdate(new Date().getTime());
 		
 		g = gameManager.createGame(g);
@@ -208,7 +204,6 @@ public class GameServiceTest {
 		g2.setHostName("localhost");
 		g2.setHostPort(11224);
 		g2.setMaxPlayers(8);
-		g2.setNumberOfPlayers(1);
 		g2.setLastUpdate(new Date().getTime());
 		
 		g2 = gameManager.createGame(g2);

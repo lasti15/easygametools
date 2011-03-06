@@ -8,14 +8,11 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.mar.website.server.managers.UserManager;
 import com.mar.website.server.model.User;
 import com.mar.website.server.model.UserActivation;
 import com.mar.website.server.model.UserRole;
 import com.mar.website.server.model.exceptions.WebServiceException;
-import com.mar.website.server.model.merge.Merge;
 
 
 public class UserManagerImpl implements UserManager {
