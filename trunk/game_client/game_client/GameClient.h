@@ -70,13 +70,14 @@ namespace ROG {
 
 		Object<Player> myPlayer;
 		AVLHashT<OCString, Object<Player>, AVL_CHUNK_SIZE_MEM> gamePlayers;
+		bool creator;
 
 	protected:
 		const void stopDirectoryClient(int numPlayers);
 
 	public:
 
-		GameClient() : rakPeer(NULL), fcm2(NULL), cg2(NULL), lastUpdated(0), errorState(ERROR_OK), hostname(NULL), port(0) {
+		GameClient() : rakPeer(NULL), fcm2(NULL), cg2(NULL), lastUpdated(0), errorState(ERROR_OK), hostname(NULL), port(0), creator(false) {
 			initGameClient();
 		}
 
@@ -97,6 +98,8 @@ namespace ROG {
 		std::string* createProtocolObjectMessage(protocol::ProtocolMessage* message);
 		protocol::ProtocolMessage* decodeProtocolObjectMessage(const unsigned char* message, int len);
 
+		void updateGame(Object<ServerGame> game);
+
 
 		//api
 		void startClient(const char* username, const char* password);
@@ -116,6 +119,10 @@ namespace ROG {
 
 		Object<ServerGame> getTheGameImPlaying() {
 			return theGameImPlaying;
+		}
+
+		Object<Player> getMyPlayer() {
+			return myPlayer;
 		}
 
 	};

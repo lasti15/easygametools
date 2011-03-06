@@ -9,6 +9,7 @@
 namespace ROG {
 
 	class RunQueue : public Runnable {
+		friend class ThreadPool;
 	private:
 		Semaphore submittedSem;
 		Object<Runnable> submittedTask;
@@ -39,10 +40,11 @@ namespace ROG {
 					try {
 						submittedTask->run();
 					} catch (FatalException* ex) {
+						this->submittedTask = NULL;
 						logger->error(ex->getMsg());
 						delete ex;
 					}
-					submittedTask = NULL;
+					this->submittedTask = NULL;
 					if (queueListener != NULL) {
 						queueListener->runQueueEvent(new RunQueueEvent(EVT_COMPLETED, this, Thread::getCurrentThread()));
 					}
@@ -62,7 +64,7 @@ namespace ROG {
 			} else {
 				submittedSem.unlock();
 				queueListener->runQueueEvent(new RunQueueEvent(EVT_REJECTED, this, Thread::getCurrentThread()));
-				throw new TaskRejectedException();
+				throw new TaskRejectedException("Can't run task in queue");
 			}
 			submittedSem.unlock();
 		}

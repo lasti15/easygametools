@@ -368,6 +368,9 @@
     <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\CMakeLists.txt" />
     <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNet.vcproj" />
     <None Include="..\..\..\..\Downloads\RakNet-4.0.Beta8\Source\RakNet_vc8.vcproj" />
+    <None Include="..\protoc\ProtoChallenge.proto" />
+    <None Include="..\protoc\Protocol.proto" />
+    <None Include="..\protoc\User.proto" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

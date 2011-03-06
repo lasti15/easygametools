@@ -27,6 +27,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* ProtoChallengeAccepted_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   ProtoChallengeAccepted_reflection_ = NULL;
+const ::google::protobuf::Descriptor* ProtoNewHost_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  ProtoNewHost_reflection_ = NULL;
 
 }  // namespace
 
@@ -82,6 +85,21 @@ void protobuf_AssignDesc_ProtoChallenge_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ProtoChallengeAccepted));
+  ProtoNewHost_descriptor_ = file->message_type(3);
+  static const int ProtoNewHost_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoNewHost, gamesync_),
+  };
+  ProtoNewHost_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      ProtoNewHost_descriptor_,
+      ProtoNewHost::default_instance_,
+      ProtoNewHost_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoNewHost, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoNewHost, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(ProtoNewHost));
 }
 
 namespace {
@@ -100,6 +118,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     ProtoChallengeResponse_descriptor_, &ProtoChallengeResponse::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     ProtoChallengeAccepted_descriptor_, &ProtoChallengeAccepted::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    ProtoNewHost_descriptor_, &ProtoNewHost::default_instance());
 }
 
 }  // namespace
@@ -111,6 +131,8 @@ void protobuf_ShutdownFile_ProtoChallenge_2eproto() {
   delete ProtoChallengeResponse_reflection_;
   delete ProtoChallengeAccepted::default_instance_;
   delete ProtoChallengeAccepted_reflection_;
+  delete ProtoNewHost::default_instance_;
+  delete ProtoNewHost_reflection_;
 }
 
 void protobuf_AddDesc_ProtoChallenge_2eproto() {
@@ -134,12 +156,16 @@ void protobuf_AddDesc_ProtoChallenge_2eproto() {
     "allengeAccepted\022\'\n\013hostDetails\030\001 \002(\0132\022.R"
     "OG.protocol.User2^\n\021challengeAccepted\022\035."
     "ROG.protocol.ProtocolMessage\030h \001(\0132$.ROG"
-    ".protocol.ProtoChallengeAccepted", 512);
+    ".protocol.ProtoChallengeAccepted\"l\n\014Prot"
+    "oNewHost\022\020\n\010gameSync\030\001 \002(\0042J\n\007newHost\022\035."
+    "ROG.protocol.ProtocolMessage\030i \001(\0132\032.ROG"
+    ".protocol.ProtoNewHost", 622);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ProtoChallenge.proto", &protobuf_RegisterTypes);
   ProtoChallenge::default_instance_ = new ProtoChallenge();
   ProtoChallengeResponse::default_instance_ = new ProtoChallengeResponse();
   ProtoChallengeAccepted::default_instance_ = new ProtoChallengeAccepted();
+  ProtoNewHost::default_instance_ = new ProtoNewHost();
   ProtoChallenge::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
     &::ROG::protocol::ProtocolMessage::default_instance(),
@@ -155,6 +181,11 @@ void protobuf_AddDesc_ProtoChallenge_2eproto() {
     &::ROG::protocol::ProtocolMessage::default_instance(),
     104, 11, false, false,
     &::ROG::protocol::ProtoChallengeAccepted::default_instance());
+  ProtoNewHost::default_instance_->InitAsDefaultInstance();
+  ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
+    &::ROG::protocol::ProtocolMessage::default_instance(),
+    105, 11, false, false,
+    &::ROG::protocol::ProtoNewHost::default_instance());
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_ProtoChallenge_2eproto);
 }
 
@@ -820,6 +851,220 @@ void ProtoChallengeAccepted::Swap(ProtoChallengeAccepted* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = ProtoChallengeAccepted_descriptor_;
   metadata.reflection = ProtoChallengeAccepted_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int ProtoNewHost::kGameSyncFieldNumber;
+#endif  // !_MSC_VER
+
+#ifndef _MSC_VER
+const int ProtoNewHost::kNewHostFieldNumber;
+#endif
+::google::protobuf::internal::ExtensionIdentifier< ::ROG::protocol::ProtocolMessage,
+    ::google::protobuf::internal::MessageTypeTraits< ::ROG::protocol::ProtoNewHost >, 11, false >
+  ProtoNewHost::newHost(kNewHostFieldNumber, ::ROG::protocol::ProtoNewHost::default_instance());
+ProtoNewHost::ProtoNewHost()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void ProtoNewHost::InitAsDefaultInstance() {
+}
+
+ProtoNewHost::ProtoNewHost(const ProtoNewHost& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void ProtoNewHost::SharedCtor() {
+  _cached_size_ = 0;
+  gamesync_ = GOOGLE_ULONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+ProtoNewHost::~ProtoNewHost() {
+  SharedDtor();
+}
+
+void ProtoNewHost::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void ProtoNewHost::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* ProtoNewHost::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return ProtoNewHost_descriptor_;
+}
+
+const ProtoNewHost& ProtoNewHost::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_ProtoChallenge_2eproto();  return *default_instance_;
+}
+
+ProtoNewHost* ProtoNewHost::default_instance_ = NULL;
+
+ProtoNewHost* ProtoNewHost::New() const {
+  return new ProtoNewHost;
+}
+
+void ProtoNewHost::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    gamesync_ = GOOGLE_ULONGLONG(0);
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool ProtoNewHost::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint64 gameSync = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &gamesync_)));
+          set_has_gamesync();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+      
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void ProtoNewHost::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required uint64 gameSync = 1;
+  if (has_gamesync()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->gamesync(), output);
+  }
+  
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* ProtoNewHost::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required uint64 gameSync = 1;
+  if (has_gamesync()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->gamesync(), target);
+  }
+  
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int ProtoNewHost::ByteSize() const {
+  int total_size = 0;
+  
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint64 gameSync = 1;
+    if (has_gamesync()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->gamesync());
+    }
+    
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void ProtoNewHost::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const ProtoNewHost* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ProtoNewHost*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void ProtoNewHost::MergeFrom(const ProtoNewHost& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_gamesync()) {
+      set_gamesync(from.gamesync());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void ProtoNewHost::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ProtoNewHost::CopyFrom(const ProtoNewHost& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProtoNewHost::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  
+  return true;
+}
+
+void ProtoNewHost::Swap(ProtoNewHost* other) {
+  if (other != this) {
+    std::swap(gamesync_, other->gamesync_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata ProtoNewHost::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = ProtoNewHost_descriptor_;
+  metadata.reflection = ProtoNewHost_reflection_;
   return metadata;
 }
 

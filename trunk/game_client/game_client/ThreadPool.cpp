@@ -100,26 +100,35 @@ void ThreadPool::execute(Object<Runnable> task) {
 
 void ThreadPool::runQueueEvent(Object<RunQueueEvent> evt) {
 	logger->info("run queue event");
-	taskQueueSem.lock();
 	
 	Object<RunQueue> queue = (RunQueue*)(&(*(evt->getRunQueue())));
 
-	if (taskQueue.length() > 0) {
-		Object<Runnable> task = taskQueue.removeAt(0);
+	if (evt->getEventType() == EVT_COMPLETED) {
+		taskQueueSem.lock();
+		if (queue->submittedTask != NULL) {
+			logger->warn("Task isnt done yet???");
+		}
 
-		//unlock the semaphore first in case the task we offer to the queue executes really quickly
+		if (taskQueue.length() > 0) {
+			logger->info("running queued task");
+			Object<Runnable> task = taskQueue.removeAt(0);
+
+			//unlock the semaphore first in case the task we offer to the queue executes really quickly
+			taskQueueSem.unlock();
+
+			queue->offer(task);
+		} else {
+			logger->info("releasing thread to pool");
+
+			threadPoolSem.lock();
+
+			//return the thread to the pool
+			threadPool.append(evt->getThread());
+
+			threadPoolSem.unlock();
+
+		}
 		taskQueueSem.unlock();
-
-		queue->offer(task);
-	} else {
-		taskQueueSem.unlock();
-
-		threadPoolSem.lock();
-
-		//return the thread to the pool
-		threadPool.append(evt->getThread());
-
-		threadPoolSem.unlock();
 	}
 }
 

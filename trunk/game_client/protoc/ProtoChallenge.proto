@@ -28,3 +28,10 @@ message ProtoChallengeAccepted {
   }
   required User hostDetails = 1;
 }
+
+message ProtoNewHost {
+  extend ProtocolMessage {
+     optional ProtoNewHost newHost = 105;
+  }
+  required uint64 gameSync = 1;
+}
