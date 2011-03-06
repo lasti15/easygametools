@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.4.xsd">
+
+	 <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >		
+ 		<property name="locations">
+ 			<list merge="true">
+ 				<value>classpath:server.properties</value>
+ 				<value>file:///usr/local/directory/server.properties</value>
+ 			</list>
+ 		</property>
+ 		<property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+    
+	<import resource="classpath:services-config.xml"/>
+	<import resource="classpath:security.xml"/>
+	<import resource="classpath:web-config.xml"/>
+	<import resource="classpath:db-config.xml"/>
+	
+	<!-- The model merging system -->
+  	<bean id="modelMerger" class="com.mar.website.server.model.merge.impl.UncheckedModelMerger" />
+  	
+  	<bean id="validationManager" class="com.mar.website.server.model.merge.impl.ValidationManagerImpl">
+  		<property name="validators">
+  			<map key-type="java.lang.String" value-type="com.mar.website.server.model.merge.Validator">
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.USERNAME_VALIDATOR"/></key>
+  					<bean id="usernameValidator" class="com.mar.website.server.model.merge.impl.InputValidator">
+  						<property name="required"><value>true</value></property>
+  						<property name="regex"><value>^[\w@\.\[\]]+$</value></property>
+  					</bean>
+  				</entry>
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.PASSWORD_VALIDATOR"/></key>
+  					<bean id="passwordValidator" class="com.mar.website.server.model.merge.impl.InputValidator">
+  						<property name="required"><value>true</value></property>
+  						<property name="regex"><value>^[^\s]+$</value></property>
+  					</bean>
+  				</entry>
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.PIN_VALIDATOR"/></key>
+  					<bean id="pinValidator" class="com.mar.website.server.model.merge.impl.InputValidator">
+  						<property name="type"><value>java.lang.Integer</value></property>
+  						<property name="required"><value>true</value></property>
+  						<property name="regex"><value>^[\d]+$</value></property>
+  					</bean>
+  				</entry>
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.ACTIVATION_VALIDATOR"/></key>
+  					<bean id="activationValidator" class="com.mar.website.server.model.merge.impl.InputValidator">
+  						<property name="required"><value>true</value></property>
+  						<property name="regex"><value>^[\w]+$</value></property>
+  					</bean>
+  				</entry>
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.EMAIL_VALIDATOR"/></key>
+  					<bean id="emailValidator" class="com.mar.website.server.model.merge.impl.InputValidator">
+  						<property name="required"><value>true</value></property>
+  						<property name="regex"><value>^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$</value></property>
+  					</bean>
+  				</entry>
+  				<entry>
+  					<key><util:constant static-field="com.mar.website.server.model.merge.impl.Validators.USER_VALIDATOR"/></key>
+  					<bean id="userValidator" class="com.mar.website.server.model.merge.impl.UserValidator" />
+  				</entry>
+  			</map>
+  		</property>
+  	</bean>
+  	
+  	<!-- Email Sender -->
+  	<bean id="emailHelper" class="com.mar.website.server.email.EmailHelper">
+  		<property name="smtpHostName"><value>${app.email.smtp.hostName}</value></property>
+  		<property name="smtpNeedsAuth"><value>${app.email.smtp.needsAuth}</value></property>
+  		<property name="smtpUsername"><value>${app.email.smtp.username}</value></property>
+  		<property name="smtpPassword"><value>${app.email.smtp.password}</value></property>
+  		<property name="defaultFromAddress"><value>${app.email.fromAddress}</value></property>
+  		<property name="smtpNeedsTls"><value>${app.email.smtp.needsTls}</value></property>
+  		<property name="serverHost"><value>${app.email.linkto}</value></property>
+  	</bean>
+
+</beans>
+    

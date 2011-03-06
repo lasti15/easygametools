@@ -1,0 +1,17 @@
+
+
+package ROG.protocol;
+
+
+import "Protocol.proto";
+
+
+message User {
+  extend ProtocolMessage {
+     optional User user = 101;
+  }
+
+  required int64 userId = 1;
+  optional string username = 2;
+}
+

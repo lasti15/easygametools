@@ -1,0 +1,30 @@
+
+
+package ROG.protocol;
+
+
+import "Protocol.proto";
+import "User.proto";
+
+
+message ProtoChallenge {
+  extend ProtocolMessage {
+     optional ProtoChallenge challenge = 102;
+  }
+  required uint64 challengerId = 1;
+}
+
+
+message ProtoChallengeResponse {
+  extend ProtocolMessage {
+     optional ProtoChallengeResponse challengeResponse = 103;
+  }
+  required User userDetails = 1;
+}
+
+message ProtoChallengeAccepted {
+  extend ProtocolMessage {
+     optional ProtoChallengeAccepted challengeAccepted = 104;
+  }
+  required User hostDetails = 1;
+}
