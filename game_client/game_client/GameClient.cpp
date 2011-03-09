@@ -166,10 +166,7 @@ public:
 		{
 			//send our user info to the client
 			protocol::ProtocolMessage* challengeMessage = (protocol::ProtocolMessage*)ProtocolFactory::getProtoChallengeAcceptedMessage(me->getUser());
-			std::string* msgData = client->createProtocolObjectMessage(challengeMessage);
-			client->sendProtocolMessage(msgData, &RakNet::AddressOrGUID(from->getClientGuid()));
-			delete msgData;
-			delete challengeMessage;
+			client->sendProtocolObject(challengeMessage, from->getClientGuid());
 		}
 
 		delete message;
@@ -187,10 +184,7 @@ public:
 	//send the challenge response message
 	void handleMessage(protocol::ProtocolMessage* message, Object<Player> me, Object<Player> from, AVLHashT<OCString, Object<Player>, AVL_CHUNK_SIZE_MEM>* currentPlayers) {
 		protocol::ProtocolMessage* response = (protocol::ProtocolMessage*)ProtocolFactory::getProtoChallengeResponseMessage(me->getUser());
-		std::string* msgData = client->createProtocolObjectMessage(response);
-		client->sendProtocolMessage(msgData, &RakNet::AddressOrGUID(from->getClientGuid()));
-		delete msgData;
-		delete response;
+		client->sendProtocolObject(response, from->getClientGuid());
 
 		delete message;
 	}
@@ -420,10 +414,7 @@ void GameClient::run() {
 						{
 							//challenge this client to identify themselves
 							protocol::ProtocolMessage* challengeMessage = (protocol::ProtocolMessage*)ProtocolFactory::getProtoChallengeMessage(this->myUser->getUserId());
-							std::string* msgData = this->createProtocolObjectMessage(challengeMessage);
-							this->sendProtocolMessage(msgData, &RakNet::AddressOrGUID(packet->guid));
-							delete msgData;
-							delete challengeMessage;
+							sendProtocolObject(challengeMessage, packet->guid);
 						}
 						break;
 
@@ -599,12 +590,29 @@ void GameClient::handleProtocolMessage(RakNet::Packet* packet) {
 		}
 	} else {
 		//handle authenticated clients
+
+		//only authenticated clients should handle the new host message
+		if (messageId == protocol::NEWHOST) {
+			logger->debug("New host message!");
+			Object<Runnable> updateTask = new DirectoryUpdateTask(this->theGameImPlaying, this->directoryClient, false);
+			//otherwise just ask for any changes to the current game record
+			dispatchPool->execute(updateTask);
+		}
+
 		//attach the protocol object to the event instead of the raw packet
 		dispatchPool->execute(new GameClientEventTask(new ClientEventEmitter(this->eventListener), EVENT_OBJECT_MESSAGE, packet));
 	}
 
 	//dont delete the message because we are using it int he threads. Delete it when you are done with it
 	//delete message;
+}
+
+
+void GameClient::sendProtocolObject(protocol::ProtocolMessage* message, RakNet::RakNetGUID guid) {
+	std::string* msgData = this->createProtocolObjectMessage(message);
+	this->sendProtocolMessage(msgData, &RakNet::AddressOrGUID(guid));
+	delete msgData;
+	delete message;
 }
 
 void GameClient::sendProtocolMessage(std::string* message, RakNet::AddressOrGUID* addr) {

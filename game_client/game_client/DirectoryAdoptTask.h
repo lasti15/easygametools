@@ -36,12 +36,16 @@ namespace ROG {
 		}
 
 		void run() {
-			logger->debug("Adopting host game!");
+			logger->info("Adopting game");
 			//dont make the creator adopt the game.
 			if (!creator) {
 				this->gameClient->updateGame(directoryClient->adoptGame(gameClient->getTheGameImPlaying()->getGameId(), this->hostName, this->port,
 					rakPeer->GetGuidFromSystemAddress(RakNet::SystemAddress(this->hostName, this->port)).ToString()));
+			} else {
+				logger->debug("Skipping adoption because i am the game creator");
 			}
+
+			logger->debug("Sending new host message to all clients");
 
 			//tell everyone there is a new host
 			protocol::ProtocolMessage* challengeMessage = (protocol::ProtocolMessage*)ProtocolFactory::getProtoNewHostMessage(gameClient->getTheGameImPlaying()->getGameId());
@@ -49,6 +53,8 @@ namespace ROG {
 			gameClient->sendProtocolMessage(msgData, NULL);
 			delete msgData;
 			delete challengeMessage;
+
+			logger->debug("Directory Adopt task complete");
 		}
 	};
 

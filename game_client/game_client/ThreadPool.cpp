@@ -106,6 +106,7 @@ void ThreadPool::runQueueEvent(Object<RunQueueEvent> evt) {
 	if (evt->getEventType() == EVT_COMPLETED) {
 		taskQueueSem.lock();
 		if (queue->submittedTask != NULL) {
+			//this error message helps when debugging tricky control flow bugs
 			logger->warn("Task isnt done yet???");
 		}
 
