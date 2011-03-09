@@ -14,8 +14,8 @@
 <TestApp.logLevel value="DEBUG" />
 <!--ThreadPool.logLevel value="DEBUG" /-->
 <!--RunQueue.logLevel value="DEBUG" /-->
-<DirectoryUpdateTask.logLevel value="DEBUG" />
-<DirectoryAdoptTask.logLevel value="DEBUG" />
+<DirectoryUpdateTask.logLevel value="INFO" />
+<DirectoryAdoptTask.logLevel value="INFO" />
 <ChallengeResponseMessageHandler.logLevel value="DEBUG" />
 <ChallengeAcceptedMessageHandler.logLevel value="DEBUG" />
 

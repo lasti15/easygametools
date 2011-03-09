@@ -93,13 +93,13 @@ namespace ROG {
 		const void clearErrorState();
 
 		void handleProtocolMessage(RakNet::Packet* packet);
+		void sendProtocolObject(protocol::ProtocolMessage* message, RakNet::RakNetGUID guid);
 		void sendProtocolMessage(std::string* message, RakNet::AddressOrGUID* addr);
 
 		std::string* createProtocolObjectMessage(protocol::ProtocolMessage* message);
 		protocol::ProtocolMessage* decodeProtocolObjectMessage(const unsigned char* message, int len);
 
 		void updateGame(Object<ServerGame> game);
-
 
 		//api
 		void startClient(const char* username, const char* password);

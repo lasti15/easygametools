@@ -25,11 +25,11 @@ namespace ROG {
 
 		void run() {
 			if (isHost) {
-				logger->debug("Updating directory client");
+				logger->info("Updating directory client");
 				this->gameImPlaying = directoryClient->updateGame(this->gameImPlaying);
 			} else {
 				//otherwise just ask for any changes to the current game record
-				logger->debug("Checking directory client for updates");
+				logger->info("Checking directory client for updates");
 				this->gameImPlaying = directoryClient->getUpdatedGame(this->gameImPlaying->getGameId());
 			}
 		}
